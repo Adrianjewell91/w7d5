@@ -7,8 +7,8 @@ const SessionErrorsReducer = (state = [], action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
-      const errors = action.errors;
-      return Object.assign({}, state, { errors });
+      const errors = action.errors.responseJSON.errors;
+      return [errors];
 
     case RECEIVE_CURRENT_USER:
       return [];
